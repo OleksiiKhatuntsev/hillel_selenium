@@ -1,7 +1,6 @@
-from driver import Driver
-from label import Label
 from selenium.webdriver.common.by import By
 from base_page import BasePage
+from label import Label
 
 
 class MotoDetailsPage(BasePage):
@@ -11,5 +10,5 @@ class MotoDetailsPage(BasePage):
 
     def get_certification_text(self):
         self.__certification = Label(
-            self._driver.find_element(By.XPATH, "//tr//*[text()='Сертификация']/ancestor::tr//span[text()='Euro 3']"))
+            self._driver.find_element(By.XPATH, "//tr//*[text()='Сертификация']/ancestor::tr/td[2]//span"))
         return self.__certification.get_text()
